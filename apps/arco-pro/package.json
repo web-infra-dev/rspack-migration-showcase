@@ -4,8 +4,10 @@
   "description": "Arco Design Pro",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development rspack serve -c rspack.config.js",
-    "build": "time NODE_ENV=production rspack build -c rspack.config.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "start:rspack": "NODE_ENV=development rspack serve -c rspack.config.js",
+    "build:rspack": "time NODE_ENV=production rspack build -c rspack.config.js",
     "analyze": "NODE_ENV=production rspack build --analyze -c rspack.config.js"
   },
   "dependencies": {
