@@ -26,26 +26,6 @@ module.exports = {
     rules:
       [
         {
-          test: /\.scss$/,
-          use:
-            [
-              {
-                loader: 'sass-loader',
-              },
-            ],
-          type: 'css',
-        },
-        {
-          test: /\.module\.scss$/,
-          use:
-            [
-              {
-                loader: 'sass-loader',
-              },
-            ],
-          type: 'css/module',
-        },
-        {
           test: /\.less$/,
           use: [{ loader: require.resolve('less-loader') }],
           type: 'css'
@@ -63,14 +43,13 @@ module.exports = {
                 loader: '@svgr/webpack',
               },
             ],
-          type: 'js',
+          type: 'javascript/auto',
         },
       ],
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      bizchars: require.resolve('bizcharts/es/index.js')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   output: {
@@ -82,6 +61,6 @@ module.exports = {
   stats: {
     all: false,
     errors: true,
-    warnings: true,
+    warnings: false,
   },
 };

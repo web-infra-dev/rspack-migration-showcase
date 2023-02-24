@@ -1,6 +1,4 @@
 import './style/global.less'
-import './style.scss';
-import style from './button.module.scss';
 import { ConfigProvider } from '@arco-design/web-react'
 import enUS from '@arco-design/web-react/es/locale/en-US'
 import zhCN from '@arco-design/web-react/es/locale/zh-CN'
@@ -67,7 +65,6 @@ function Index() {
   return (
     
     <div className='root'>
-    <div className={style.root}></div>
     <BrowserRouter>
     <Suspense fallback={<div>loading....</div>}>
       <ConfigProvider
