@@ -18,7 +18,7 @@ const path = require('path');
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs-extra');
 const bfj = require('bfj');
-const webpack = require('webpack');
+const { rspack } = require('/Users/bytedance/Codes/rspack/packages/rspack');
 const configFactory = require('../config/webpack.config');
 const paths = require('../config/paths');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
@@ -135,7 +135,7 @@ checkBrowsers(paths.appPath, isInteractive)
 function build(previousFileSizes) {
   console.log('Creating an optimized production build...');
 
-  const compiler = webpack(config);
+  const compiler = rspack(config);
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       let messages;

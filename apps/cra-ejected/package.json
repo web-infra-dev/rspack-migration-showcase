@@ -5,6 +5,9 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
+    "@rspack/core": "^0.1.0",
+    "@rspack/dev-server": "^0.1.0",
+    "@rspack/plugin-html": "^0.1.0",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
