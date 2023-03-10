@@ -1,7 +1,6 @@
 'use strict';
 
 const fs = require('fs');
-const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const redirectServedPath = require('react-dev-utils/redirectServedPathMiddleware');
@@ -105,7 +104,10 @@ module.exports = function (proxy, allowedHost) {
       // Keep `evalSourceMapMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect
       // This lets us fetch source contents from webpack for the error overlay
-      devServer.app.use(evalSourceMapMiddleware(devServer));
+      /**
+       * Rspack: not supported yet
+       */
+      // devServer.app.use(evalSourceMapMiddleware(devServer));
 
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons

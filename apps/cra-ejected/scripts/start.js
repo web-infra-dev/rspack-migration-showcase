@@ -16,8 +16,8 @@ require('../config/env');
 
 const fs = require('fs');
 const chalk = require('react-dev-utils/chalk');
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
+const { rspack } = require('/Users/bytedance/Codes/rspack/packages/rspack');
+const { RspackDevServer } = require('/Users/bytedance/Codes/rspack/packages/rspack-dev-server');
 const clearConsole = require('react-dev-utils/clearConsole');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const {
@@ -97,7 +97,7 @@ checkBrowsers(paths.appPath, isInteractive)
       urls,
       useYarn,
       useTypeScript,
-      webpack,
+      webpack: rspack,
     });
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
@@ -112,7 +112,7 @@ checkBrowsers(paths.appPath, isInteractive)
       host: HOST,
       port,
     };
-    const devServer = new WebpackDevServer(serverConfig, compiler);
+    const devServer = new RspackDevServer(serverConfig, compiler);
     // Launch WebpackDevServer.
     devServer.startCallback(() => {
       if (isInteractive) {
